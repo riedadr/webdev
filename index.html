@@ -13,7 +13,12 @@
     <body>
         <header>
             <div class="nav-content">
-                <h1 class="no-margin">Web-Development 1</h1>
+                <h1 class="no-margin">
+                    Web-Development 1
+                    <time class="datum"
+                        >27. April 2022
+                    </time>
+                </h1>
                 <button id="scrollUp" onclick="scrollToSection('kapitel')">
                     <img src="icons/angles-up-solid.svg" alt="scroll to top" />
                 </button>
@@ -22,11 +27,11 @@
         </header>
         <main id="main">
             <section id="kapitel">
-                <h1 class="no-margin">Vorlesungen</h1>
+                <h1 class="no-margin">Vorlesungen <small class="orange">Keine Garantie auf Korrektheit</small></h1>
                 <div>
                     <ul class="list-unstyled list-grid" id="chapters">
                         <li>
-                            <button onclick="scrollToSection('vl1')">
+                            <button onclick="scrollToSection('intro')">
                                 <h2>Einführung</h2>
                                 <time class="datum"
                                     >22. März 2022 + 29. März 2022</time
@@ -34,7 +39,7 @@
                             </button>
                         </li>
                         <li>
-                            <button onclick="scrollToSection('vl2')">
+                            <button onclick="scrollToSection('webapps')">
                                 <h2>Webanwendung</h2>
                                 <time class="datum"
                                     >29. März 2022 + 5. April 2022</time
@@ -42,7 +47,7 @@
                             </button>
                         </li>
                         <li>
-                            <button onclick="scrollToSection('vl3')">
+                            <button onclick="scrollToSection('html')">
                                 <h2>HTML</h2>
                                 <time class="datum"
                                     >12. April 2022 + 19. April 2022</time
@@ -56,7 +61,7 @@
                             </button>
                         </li>
                         <li>
-                            <button onclick="scrollToSection('vl4')">
+                            <button onclick="scrollToSection('css')">
                                 <h2>CSS</h2>
                                 <time class="datum">26. April 2022</time>
                             </button>
@@ -69,14 +74,14 @@
                     <ul class="übung list-unstyled list-grid">
                         <li>
                             <a href="_übung/1/aufg2/aufg2.html">
-                                    <h2>Aufgabe 2 + 3</h2>
-                                    <p>BorderPane</p>
+                                <h2>Aufgabe 2 + 3</h2>
+                                <p>BorderPane</p>
                             </a>
                         </li>
                         <li>
                             <a href="_übung/1/aufg4/aufg4.html">
-                                    <h2>Aufgabe 4, 5, 6, 7, 8</h2>
-                                    <p>Formular</p>
+                                <h2>Aufgabe 4, 5, 6, 7, 8</h2>
+                                <p>Formular</p>
                             </a>
                         </li>
                     </ul>
@@ -87,21 +92,21 @@
                     <ul class="übung list-unstyled list-grid">
                         <li>
                             <a href="_übung/2/aufg1/aufg1.html">
-                                    <h2>Aufgabe 1</h2>
-                                    <p>SVG</p>
+                                <h2>Aufgabe 1</h2>
+                                <p>SVG</p>
                             </a>
                         </li>
                         <li>
                             <a href="_übung/2/aufg4/aufg4.html">
-                                    <h2>Aufgabe 4</h2>
-                                    <p>Kategorien</p>
+                                <h2>Aufgabe 4</h2>
+                                <p>Kategorien</p>
                             </a>
                         </li>
                     </ul>
                 </div>
             </section>
 
-            <section id="vl1">
+            <section id="intro">
                 <h1 class="no-margin">
                     Einführung
                     <time class="datum">22. März 2022 + 29. März 2022</time>
@@ -138,7 +143,7 @@
                 </ul>
             </section>
 
-            <section id="vl2">
+            <section id="webapps">
                 <h1 class="no-margin">
                     Webanwendung
                     <time class="datum">29. März 2022 + 5. April 2022</time>
@@ -158,21 +163,21 @@
                 <p>
                     Microsoft droht seine Vormachtstellung gegen Netscape und
                     Java zu verlieren. Am Ende siegt jedoch Microsoft, da sie
-                    sich nicht an die vereinbarten Standards hielten, und
-                    Netscape wurde aufgegeben und wird OpenSpurce. Daraus
+                    sich nicht an die vereinbarten Standards hielten.
+                    Netscape wurde aufgegeben und opensource, daraus
                     entsteht Mozilla Firefox.
                 </p>
                 <p>
                     Im Jahr 2005 nimmt Firefox dann dem Internet Explorer
-                    Marktanteile und weg und wird beliebtester Browser.
+                    Marktanteile weg und wird beliebtester Browser.
                 </p>
                 <h2>
                     Gerichtsbeschluss gegen Microsoft <small>2009 - 2014</small>
                 </h2>
                 <p>
                     EU schränkt Verankerung des Internet Explorers in Microsoft
-                    Windows durch Gerichtsbeschluss ein und lässt den Nutzer selbst
-                    unter BrowserChoice.eu seinen Browser wählen.
+                    Windows durch Gerichtsbeschluss ein und lässt den Nutzer
+                    selbst unter BrowserChoice.eu seinen Browser wählen.
                 </p>
 
                 <h2>Webserver</h2>
@@ -235,7 +240,7 @@
                     </dd>
                 </dl>
             </section>
-            <section id="vl3">
+            <section id="html">
                 <h1 class="no-margin">
                     HTML <small>(Hypertext Markup Language</small>
                     <time class="datum">12. April 2022 + 19. April 2022</time>
@@ -333,7 +338,7 @@
                     <li>PHP + DB (MySQL)</li>
                 </ul>
             </section>
-            <section id="vl4">
+            <section id="css">
                 <h1 class="no-margin">
                     CSS <small>(Cascading Style Sheets)</small>
                     <time class="datum">26. April 2022</time>

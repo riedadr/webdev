@@ -200,6 +200,13 @@ section {
         padding: 0.5rem !important;
         border-radius: 0.25rem !important;
         word-break: break-all;
+        overflow: scroll;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
@@ -225,6 +232,13 @@ footer {
 
     img {
         width: 1.25rem;
+    }
+}
+
+#kapitel {
+    h1 small {
+        font-size: small;
+        font-weight: 500;
     }
 }
 
@@ -270,22 +284,21 @@ footer {
         }
 
         a {
-        color: var(--text);
-        font-style: normal;
+            color: var(--text);
+            font-style: normal;
 
-        p {
-            font-size: small;
-            color: var(--blue);
-            font-family: "Bebas Neue", cursive;
-            font-weight: 100;
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: small;
+                color: var(--blue);
+                font-family: "Bebas Neue", cursive;
+                font-weight: 100;
+            }
         }
     }
-    }
-
-
-    li 
-
-    li 
 
     li:hover {
         border: 2px solid var(--green);
