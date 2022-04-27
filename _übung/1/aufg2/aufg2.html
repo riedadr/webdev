@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="./aufg2.css" />
+        <title>Border-Pane</title>
+    </head>
+    <body>
+        <header title="TOP" class="base">
+            <button onclick="buttonClick(this)">TOP</button>
+        </header>
+        <nav title="LEFT" class="base">
+            <button onclick="buttonClick(this)">LEFT</button>
+        </nav>
+        <main title="CENTER" class="base">
+            <p>CENTER</p>
+        </main>
+        <aside title="RIGHT" class="base">
+            <button onclick="buttonClick(this)">RIGHT</button>
+        </aside>
+        <footer title="BOTTOM" class="base">
+            <button onclick="buttonClick(this)">BOTTOM</button>
+        </footer>
+        <a id="home" href="/" title="Startseite">
+            <img src="/icons/house-solid.svg" alt="Home">
+        </a>
+
+        <script type="text/javascript">
+            function buttonClick(button) {
+                console.log(button.innerText);
+                const p = document.querySelector("p");
+                p.innerText = button.innerText;
+                
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="prism/prism.css" />
+
+        <title>Vorlesungen</title>
+    </head>
+    <body>
+        <header>
+            <div class="nav-content">
+                <h1 class="no-margin">Web-Development 1</h1>
+                <button id="scrollUp" onclick="scrollToSection('kapitel')">
+                    <img src="icons/angles-up-solid.svg" alt="scroll to top" />
+                </button>
+            </div>
+            <progress id="scoll-progress" value="0" max="100"></progress>
+        </header>
+        <main id="main">
+            <section id="kapitel">
+                <h1 class="no-margin">Vorlesungen</h1>
+                <div>
+                    <ul class="list-unstyled list-grid" id="chapters">
+                        <li>
+                            <button onclick="scrollToSection('vl1')">
+                                <h2>Einführung</h2>
+                                <time class="datum"
+                                    >22. März 2022 + 29. März 2022</time
+                                >
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="scrollToSection('vl2')">
+                                <h2>Webanwendung</h2>
+                                <time class="datum"
+                                    >29. März 2022 + 5. April 2022</time
+                                >
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="scrollToSection('vl3')">
+                                <h2>HTML</h2>
+                                <time class="datum"
+                                    >12. April 2022 + 19. April 2022</time
+                                >
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="scrollToSection('testat2')">
+                                <h2>Testat 2</h2>
+                                <time class="datum">26. April 2022</time>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="scrollToSection('vl4')">
+                                <h2>CSS</h2>
+                                <time class="datum">26. April 2022</time>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <h1 class="no-margin">Übung 1</h1>
+                <div>
+                    <ul class="übung list-unstyled list-grid">
+                        <li>
+                            <a href="_übung/1/aufg2/aufg2.html">
+                                    <h2>Aufgabe 2 + 3</h2>
+                                    <p>BorderPane</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="_übung/1/aufg4/aufg4.html">
+                                    <h2>Aufgabe 4, 5, 6, 7, 8</h2>
+                                    <p>Formular</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <h1 class="no-margin">Übung 2</h1>
+                <div>
+                    <ul class="übung list-unstyled list-grid">
+                        <li>
+                            <a href="_übung/2/aufg1/aufg1.html">
+                                    <h2>Aufgabe 1</h2>
+                                    <p>SVG</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="_übung/2/aufg4/aufg4.html">
+                                    <h2>Aufgabe 4</h2>
+                                    <p>Kategorien</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="vl1">
+                <h1 class="no-margin">
+                    Einführung
+                    <time class="datum">22. März 2022 + 29. März 2022</time>
+                </h1>
+                <h2>Standbeine des WWW</h2>
+                <ul>
+                    <li>
+                        Einheitliches Schema für das Auffinden von Ressourcen
+                        (URL/Hyperlink)
+                    </li>
+                    <li>Protokolle, um auf diese Ressourcen zuzugreifen</li>
+                    <li>
+                        Hypertext, um einfach zwischen Ressourcen zu navigieren
+                        (z.B. HTML)
+                    </li>
+                </ul>
+                <h2>
+                    <abbr title="What You See Is What You Get">WYSIWYG</abbr
+                    >-Editoren
+                </h2>
+                <p>
+                    integrieren neben der Möglichkeit, den Quelltext direkt zu
+                    editieren, eine graphische Ausgabe/Editor.
+                </p>
+                <h2>Serversysteme</h2>
+                <ul>
+                    <li>LAMP: Linux, Apache, MySQL, PHP</li>
+                    <li>WAMP: Windows, Apache, MySQL, PHP</li>
+                    <li>
+                        XAMPP: Betriebssystem X, Apache, MySQL, PHP, Perl/Python
+                    </li>
+                    <li>LEMP: Linux, NGINX, MySQL, PHP</li>
+                    <li>MEAN: MongoDB, ExpressJS, Angular, NodeJS</li>
+                </ul>
+            </section>
+
+            <section id="vl2">
+                <h1 class="no-margin">
+                    Webanwendung
+                    <time class="datum">29. März 2022 + 5. April 2022</time>
+                </h1>
+                <h2>URI: Uniform Ressource Identifier</h2>
+                <p>
+                    fasst <abbr title="Uniform Ressource Locator">URL</abbr> und
+                    <abbr title="Uniform Ressource Naming">URN</abbr> zusammen.
+                </p>
+                <p>
+                    <strong>IRI:</strong> International Ressource Indentifier,
+                    verwendet Unicode.
+                </p>
+
+                <h2>(Erster) Browser-Krieg <small>1995 - 1998</small></h2>
+                <p>Microsoft vs. Netscape. Ausgelöst durch eCommerce.</p>
+                <p>
+                    Microsoft droht seine Vormachtstellung gegen Netscape und
+                    Java zu verlieren. Am Ende siegt jedoch Microsoft, da sie
+                    sich nicht an die vereinbarten Standards hielten, und
+                    Netscape wurde aufgegeben und wird OpenSpurce. Daraus
+                    entsteht Mozilla Firefox.
+                </p>
+                <p>
+                    Im Jahr 2005 nimmt Firefox dann dem Internet Explorer
+                    Marktanteile und weg und wird beliebtester Browser.
+                </p>
+                <h2>
+                    Gerichtsbeschluss gegen Microsoft <small>2009 - 2014</small>
+                </h2>
+                <p>
+                    EU schränkt Verankerung des Internet Explorers in Microsoft
+                    Windows durch Gerichtsbeschluss ein lässt den Nutzer selbst
+                    unter BrowserChoice.eu seinen Browser wählen.
+                </p>
+
+                <h2>Webserver</h2>
+                <ul>
+                    <li>Apache Webserver</li>
+                    <li>
+                        nginx <small class="red">ist nicht von Google!</small>
+                    </li>
+                    <li>Microsoft IIS (Internet Information Server)</li>
+                    <li>Apache Tomcat</li>
+                </ul>
+                <h2>HTTP 1.1</h2>
+                <p>Request-Header | Response-Header</p>
+                <p>
+                    beinhalten Steuerinformationen, die Browser und Webserver
+                    miteinander austauschen.
+                </p>
+                <p>Request-Header</p>
+                <ul>
+                    <li>
+                        <strong>Cache-Control</strong>: Zwischenspeichern der
+                        Daten (für eine bestimmte Zeit) auf Proxy
+                    </li>
+                    <li><strong>Host</strong>: www.hof-university.de \r \n</li>
+                    <li>
+                        <strong>Content-Negotiation</strong>: Request- |
+                        Accept-Header
+                        <ul>
+                            <li>charset / Zeichensatz (Unicode)</li>
+                            <li>encoding / gewählte Codierung (ASCII)</li>
+                            <li>
+                                compression / Möglichkeit, Daten zu komprimieren
+                            </li>
+                            <li>language / Sprache (de)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Response-Header</p>
+                <ul>
+                    <li>
+                        <strong>Expires</strong>: gibt an, wann die Seite durch
+                        den Browser neu angefordert werden muss
+                    </li>
+                    <li>
+                        <strong>Location</strong>: gibt an, wohin der Inhalt
+                        verschoben wurde
+                    </li>
+                    <li><strong>Accept-Ranges</strong>:</li>
+                    <li>
+                        <strong>Allow</strong>: Server gibt dem Browser an, was
+                        er alles kann
+                    </li>
+                    <li><strong>Server</strong>: Server stellt sich vor</li>
+                </ul>
+                <dl>
+                    <dt>HTTP-Content (Body)</dt>
+                    <dd>
+                        Daten, die vom Anwender geschickt oder betrachtet
+                        werden.
+                    </dd>
+                </dl>
+            </section>
+            <section id="vl3">
+                <h1 class="no-margin">
+                    HTML <small>(Hypertext Markup Language</small>
+                    <time class="datum">12. April 2022 + 19. April 2022</time>
+                </h1>
+                <h2>Entwicklung von HTML</h2>
+                <p>
+                    Der darstellbare Inhalt war stark von der Internetbandbreite
+                    anhängig. So wurde das Tag zum Einbinden von Bildern erst
+                    entwickelt, als das Internet schnell genug war, um diese
+                    auch darzustellen.
+                </p>
+                <p>
+                    XML benötigt zu jedem öffnenden Tag stets auch ein
+                    schließendes Tag, um das Dokument parsen zu können. Browser
+                    sind da bei HTML toleranter.
+                </p>
+                <h2>
+                    Dokumenttypen
+                    <a
+                        href="https://www.w3.org/QA/2002/04/valid-dtd-list.html"
+                        target="_blank"
+                        rel="noreferrer"
+                        >(<abbr title="Document Type Definition">DTD</abbr>)</a
+                    >
+                </h2>
+                <span class="block">
+                    &lt;!DOCTYPE math PUBLIC
+                    <mark>"-//W3C//DTD MathML 2.0//EN"</mark> <br />
+                    "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd"&gt;
+                </span>
+                <dl>
+                    <dt>FPI</dt>
+                    <dd>Formal Public Identifier</dd>
+                </dl>
+                <h2>Bestandteile eines HTML-Dokuments</h2>
+                <pre class="block"><code class="language-html">&lt;html&gt;
+    &lt;head&gt;
+        <em>Hier kommen die Meta-Daten rein</em>
+
+        &lt;meta charset="utf-8" /&gt;
+        &lt;meta name="author" content="riedadr" /&gt;
+        &lt;meta name="description" content="Eine tolle Webseite" /&gt;
+        &lt;meta name="keywords" content="html 5, css 3, javascript" /&gt;
+        &lt;meta name="lecture" content="Web-Dev I" /&gt;
+        &lt;meta http-equiv="cache-control" content="private; no-cache" /&gt;
+
+        &lt;link rel="stylesheet" href="link/zu/.css" /&gt;
+
+        &lt;style type="text/css&gt;
+           &lt;/style&gt;
+        &lt;script type="text/javascript&gt;
+           &lt;/script&gt;
+        
+        &lt;title&gt;Titel im Tab&lt;/&gt;
+
+        &lt;base href="https://foo.bar" /&gt;
+        <em>alle relativen Links beginnen mit diesem Wert</em>
+    &lt;/head&gt;
+    &lt;body&gt;
+        <em>Hier kommt der Seiten-Inhalt rein</em>
+
+        &lt;h1&gt;Wilkommen&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <h2>XML-Parser</h2>
+                <span class="block">
+                    &lt;<mark>?xml</mark> charset="utf8" version="1.0"&gt;
+                </span>
+                <dl>
+                    <dt>Processing Instruction</dt>
+                    <dd>Verwende XML-Processor (sog. XML-Parser)</dd>
+                </dl>
+                <h2>Body</h2>
+                <p>enthält den sichtbaren Seiteninhalt.</p>
+            </section>
+            <section id="testat2">
+                <h1>
+                    Testat 2
+                    <time class="datum">26. April 2022</time>
+                </h1>
+                <p>
+                    Gruppenarbeit mit 2 - 3 Mitgliedern. Einteilung bis 3. Mai
+                    abgeben. Arbeiten mit GitHub (oder Ähnlichem).
+                </p>
+                <h2>Themen-Auswahl</h2>
+                <ul>
+                    <li>Umfrage zu selbstgewählten Thema (mit Auswertung)</li>
+                    <li>Speedtest? (mit Ranking)</li>
+                    <li>Meme-Generator (mit Galerie)</li>
+                    <li><em>Auch eigenes Theme möglich</em></li>
+                </ul>
+                <p>zu verwenden:</p>
+                <ul>
+                    <li>HTML + CSS + JS</li>
+                    <li>PHP + DB (MySQL)</li>
+                </ul>
+            </section>
+            <section id="vl4">
+                <h1 class="no-margin">
+                    CSS <small>(Cascading Style Sheets)</small>
+                    <time class="datum">26. April 2022</time>
+                </h1>
+                <h2>Eigenschaften von Elementen (CSS)</h2>
+                <p>Schriftgröße</p>
+                <ul>
+                    <li>Absolut: px, medium, small, large</li>
+                    <li>Druck: cm, mm, pt, pc (pica: 12 pt)</li>
+                    <li>Relativ zu Elternelement: %, em (= 16px)</li>
+                    <li>Relativ zu Viewport: vh, vw</li>
+                </ul>
+                <p>
+                    Textfarbe
+                    <code class="block"
+                        >color: <span class="red">red</span> |
+                        <span class="yellow">yellow</span> |
+                        <span class="green">green</span> |
+                        <span class="blue">#3498db</span> |
+                        <span class="violett">rgb(155, 89, 182)</span>;</code
+                    >
+                </p>
+                <p>Anzeige/Layout (<code>display</code>)</p>
+                <ul id="display-list">
+                    <li>Inline</li>
+                    <li>Block</li>
+                    <li>Flex</li>
+                    <li>Grid</li>
+                </ul>
+                <p>Syntax</p>
+                <pre><code class="block"><span class="red">tag</span> | <span class="orange">.class</span> | <span class="blue">#id</span> (<span class="orange">:predefined</span> | <span class="orange">::pseudo</span>) {
+    attribut: wert;
+    color: <span class="red">red</span> | <span class="yellow">yellow</span> | <span class="green">green</span>;
+    border-radius: <span class="orange">0.25rem</span>;
+}</code></pre>
+                <p>CSS-Box-Model</p>
+                <div class="block" id="box-model">
+                    <div id="margin">
+                        <p class="no-margin">margin</p>
+                        <div id="border">
+                            <p class="no-margin">border</p>
+                            <div id="padding">
+                                <p class="no-margin">padding</p>
+                                <div id="content">
+                                    <p class="no-margin">content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <a
+                href="https://github.com/riedadr/web-dev"
+                target="_blank"
+                rel="noreferrer"
+                ><img src="icons/github-brands.svg" alt="github"
+            /></a>
+            <a href="mailto:adrian.riedel@hof-university.de">Adrian Riedel</a>
+        </footer>
+        <script src="index.js"></script>
+        <script src="prism/prism.js"></script>
+    </body>
+</html>

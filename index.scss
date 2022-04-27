@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--green);
+}
+
+body {
+    --bg: #27272a;
+    --fg: #18181b;
+
+    --blue: #3498db;
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+    --orange: #e67e22;
+    --red: #e74c3c;
+    --violett: #9b59b6;
+
+    --transition: 250ms;
+
+    margin: 0;
+    background-color: var(--bg);
+    color: #fff;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+.list-unstyled {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.list-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.green {
+    color: var(--green);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.red {
+    color: var(--red);
+}
+
+.violett {
+    color: var(--violett);
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    button {
+        padding: 0.5rem;
+        width: 2rem;
+    
+        display: none;
+        justify-content: center;
+        align-items: center;
+    
+        background-color: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    .nav-content {
+        height: 3rem;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--fg);
+    }
+}
+
+
+header progress[value] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+
+    position: fixed;
+    top: 2.75rem;
+
+    width: 100vw;
+    height: 0.25rem;
+}
+
+header progress[value]::-webkit-progress-bar {
+    background-color: var(--fg);
+}
+
+header progress[value]::-webkit-progress-value {
+    background: var(--blue);
+    background: -moz-linear-gradient(45deg, var(--blue) 0%, var(--green) 100%);
+    background: -webkit-linear-gradient(45deg,
+            var(--blue) 0%,
+            var(--green) 100%);
+    background: linear-gradient(45deg, var(--blue) 0%, var(--green) 100%);
+}
+
+header progress[value]::-moz-progress-bar {
+    background: var(--blue);
+    background: linear-gradient(45deg, var(--blue) 0%, var(--green) 100%);
+}
+
+/* Inhalt */
+
+main {
+    max-height: calc(100vh - (3rem + 3rem));
+    overflow-y: scroll;
+    margin-top: 3rem;
+}
+
+section {
+    min-height: calc(100vh - (3rem + 3rem));
+    padding: 10vw;
+    padding-top: 3rem;
+    /* nav */
+    padding-bottom: 3rem;
+    background-color: var(--bg);
+
+    h1 {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--blue);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--blue);
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    mark {
+        background-color: var(--green);
+    }
+
+    .block {
+        display: block !important;
+        font-size: 1rem !important;
+        background-color: var(--fg) !important;
+        padding: 0.5rem !important;
+        border-radius: 0.25rem !important;
+        word-break: break-all;
+    }
+}
+
+footer {
+    height: 3rem;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--fg);
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--green);
+        text-decoration: underline;
+    }
+
+    img {
+        width: 1.25rem;
+    }
+}
+
+#chapters {
+    li button {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        border: 2px solid var(--fg);
+        border-radius: 0.25rem;
+        background-color: var(--fg);
+
+        color: #fff;
+        text-align: left;
+
+        transition: var(--transition) ease;
+    }
+
+    li button:hover {
+        border: 2px solid var(--green);
+        transform: scale(1.05);
+        transition: var(--transition) ease;
+    }
+
+    li button * {
+        margin: 0;
+    }
+}
+
+.übung {
+    li {
+        padding: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 0.25rem;
+        border: 2px solid var(--fg);
+        background-color: var(--fg);
+    }
+
+    li:hover {
+        border: 2px solid var(--green);
+        transform: scale(1.05);
+        transition: var(--transition) ease;
+    }
+
+    li * {
+        margin: 0;
+    }
+
+    li a {
+        color: var(--text);
+        font-style: normal;
+
+        h2 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: small;
+            color: var(--blue);
+            font-family: "Bebas Neue", cursive;
+            font-weight: 100;
+        }
+    }
+
+}
+
+.datum {
+    font-size: small;
+    color: var(--blue);
+    font-family: "Bebas Neue", cursive;
+    font-weight: 100;
+}
+
+#box-model {
+    div {
+        padding: 1rem;
+        padding-top: 0rem;
+        min-height: 50px;
+        width: 100%;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    #margin {
+        background-color: var(--orange);
+    }
+
+    #border {
+        background-color: var(--yellow)
+    }
+
+    #padding {
+        background-color: var(--green);
+    }
+
+    #content {
+        background-color: var(--blue);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        padding: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}

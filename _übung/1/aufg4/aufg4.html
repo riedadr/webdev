@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="cit116" />
+        <meta name="description" content="Aufgabe 4" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="aufg4.css" />
+        <title>Formular</title>
+    </head>
+    <body>
+        <header>
+            <h1>Web-Dev 1: Ü1/4</h1>
+            <a id="home" href="/" title="Startseite">
+                <img src="/icons/house-solid.svg" alt="Home">
+            </a>
+        </header>
+        <main>
+            <sebction>
+                <form action="javascript:submit()">
+                    <label for="vorname">Vorname</label>
+                    <input type="text" name="vorname" />
+
+                    <label for="nachname">Nachname</label>
+                    <input type="text" name="nachname" />
+
+                    <label for="alter">Alter</label>
+                    <input type="text" name="alter" />
+
+                    <label for="geschlecht">Geschlecht</label>
+                    <input type="text" name="geschlecht" />
+
+                    <label for="straße">Straße</label>
+                    <input type="text" name="straße" />
+
+                    <label for="ort">Ort</label>
+                    <input type="text" name="ort" />
+
+                    <label for="plz">Postleitzahl</label>
+                    <input type="text" name="plz" />
+
+                    <div class="btns">
+                        <button
+                            id="import"
+                            type="button"
+                            onclick="openFile()"
+                        >
+                            importieren
+                        </button>
+                        <button id="ok" type="submit">OK</button>
+                        <button id="no" type="button" onclick="resetForm()">
+                            Abbrechen
+                        </button>
+                    </div>
+                </form>
+                <div id="output-container">
+                    <div id="output-box">
+                        <div id="close-output">
+                            <button type="button" onclick="closeOutput()">
+                                ✖
+                            </button>
+                        </div>
+                        <dl id="output"></dl>
+                        <button
+                            id="export"
+                            type="button"
+                            onclick="exportFile()"
+                        >
+                            exportieren
+                        </button>
+                    </div>
+                </div>
+            </sebction>
+        </main>
+        <script src="aufg4.js"></script>
+    </body>
+</html>

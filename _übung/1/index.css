@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #2c3e50;
+    color: #fff;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+nav {
+    height: 3rem;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #34495e;
+}
+
+main {
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+
+.index  ul.aufgaben-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.index ul.aufgaben-grid li {
+    background-color: #34495e;
+    border-radius: 0.25rem;
+    transition: 200ms ease;
+}
+.index ul.aufgaben-grid li:hover{
+    transform: scale(1.02);
+    transition: 200ms ease;
+}
+
+.index ul li .li-content {
+    padding: 0.5rem;
+    height: 100%;
+}
+
+.index ul.aufgaben-grid li * {
+    margin: 0;
+    transition: 200ms ease;
+}
+.index ul.aufgaben-grid li:hover * {
+    color: #2ecc71;
+    transition: 200ms ease;
+}
+
+
