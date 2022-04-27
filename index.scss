@@ -108,11 +108,11 @@ header {
     button {
         padding: 0.5rem;
         width: 2rem;
-    
+
         display: none;
         justify-content: center;
         align-items: center;
-    
+
         background-color: transparent;
         border: none;
         color: #fff;
@@ -264,25 +264,14 @@ footer {
         border-radius: 0.25rem;
         border: 2px solid var(--fg);
         background-color: var(--fg);
-    }
 
-    li:hover {
-        border: 2px solid var(--green);
-        transform: scale(1.05);
-        transition: var(--transition) ease;
-    }
+        * {
+            margin: 0;
+        }
 
-    li * {
-        margin: 0;
-    }
-
-    li a {
+        a {
         color: var(--text);
         font-style: normal;
-
-        h2 {
-            font-size: 1rem;
-        }
 
         p {
             font-size: small;
@@ -290,6 +279,18 @@ footer {
             font-family: "Bebas Neue", cursive;
             font-weight: 100;
         }
+    }
+    }
+
+
+    li 
+
+    li 
+
+    li:hover {
+        border: 2px solid var(--green);
+        transform: scale(1.05);
+        transition: var(--transition) ease;
     }
 
 }

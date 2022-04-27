@@ -265,14 +265,6 @@ footer img {
   background-color: var(--fg);
 }
 
-.übung li:hover {
-  border: 2px solid var(--green);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: var(--transition) ease;
-  transition: var(--transition) ease;
-}
-
 .übung li * {
   margin: 0;
 }
@@ -282,15 +274,21 @@ footer img {
   font-style: normal;
 }
 
-.übung li a h2 {
-  font-size: 1rem;
-}
-
 .übung li a p {
   font-size: small;
   color: var(--blue);
   font-family: "Bebas Neue", cursive;
   font-weight: 100;
+}
+
+.übung li
+li
+li:hover {
+  border: 2px solid var(--green);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: var(--transition) ease;
+  transition: var(--transition) ease;
 }
 
 .datum {
