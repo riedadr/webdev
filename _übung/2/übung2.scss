@@ -120,6 +120,13 @@ header {
                 fieldset {
                     padding: 0.5rem;
                     height: 100%;
+
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: start;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+
                     border-color: var(--text);
                 }
             }
@@ -128,7 +135,7 @@ header {
     }
 
     footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         height: var(--footer);
         width: 100%;

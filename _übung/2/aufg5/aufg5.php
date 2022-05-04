@@ -19,53 +19,30 @@
 		</header>
 		<main>
 			<div id="images" title="Bilder">
-				<figure id="bierflasche">
-					<img src="images/bier.png" alt="bierflasche" />
+				<?php
+					echo "<figure id='bierflasche'>
+					<img src='images/bier.png' alt='bierflasche' />
 					<figcaption>Bierflasche</figcaption>
-				</figure>
+				</figure>";
+
+				foreach(scandir("images") as $image) {
+					if ($item[0] == ".") continue;
+					echo "$item\n";
+					$name = print_r(preq_split("/\./", $item));
+					$name = ucfirst($name[0]);
+					echo "$name\n";
+
+					echo '<figure id="bierglas">
+					<img src="images/'.$item.'" alt="'.$name.'" />
+					<figcaption>'.$name.'</figcaption>
+				</figure>';
+
+				}
+				?>
+				
 				<figure id="bierglas">
 					<img src="images/bierglas.png" alt="bierglas" />
 					<figcaption>Bierglas</figcaption>
-				</figure>
-				<figure id="wein">
-					<img src="images/wein.png" alt="wein" />
-					<figcaption>Wein</figcaption>
-				</figure>
-				<figure id="tee">
-					<img src="images/tee.png" alt="tee" />
-					<figcaption>Tee</figcaption>
-				</figure>
-				<figure id="flugzeug">
-					<img src="images/flugzeug.png" alt="flugzeug" />
-					<figcaption>Flugzeug</figcaption>
-				</figure>
-				<figure id="van">
-					<img src="images/van.png" alt="van" />
-					<figcaption>Van</figcaption>
-				</figure>
-				<figure id="roller">
-					<img src="images/roller.png" alt="roller" />
-					<figcaption>Roller</figcaption>
-				</figure>
-				<figure id="fahrrad">
-					<img src="images/bicycle.png" alt="bicycle" />
-					<figcaption>Fahrrad</figcaption>
-				</figure>
-				<figure id="violine">
-					<img src="images/violine.png" alt="violine" />
-					<figcaption>Geige</figcaption>
-				</figure>
-				<figure id="mandoline">
-					<img src="images/mandoline.png" alt="mandoline" />
-					<figcaption>Mandoline</figcaption>
-				</figure>
-				<figure id="marimba">
-					<img src="images/marimba.png" alt="marimba" />
-					<figcaption>Marimba</figcaption>
-				</figure>
-				<figure id="saxophon">
-					<img src="images/saxophon.png" alt="saxophon" />
-					<figcaption>Saxophon</figcaption>
 				</figure>
 			</div>
 
