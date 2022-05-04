@@ -25,10 +25,10 @@
 					<figcaption>Bierflasche</figcaption>
 				</figure>";
 
-				foreach(scandir("images") as $image) {
-					if ($item[0] == ".") continue;
-					echo "$item\n";
-					$name = print_r(preq_split("/\./", $item));
+				foreach(scandir("images/") as $image) {
+					if ($image[0] == ".") continue;
+					echo "$image\n";
+					$name = print_r(preg_split("/\./", $image));
 					$name = ucfirst($name[0]);
 					echo "$name\n";
 
@@ -69,6 +69,6 @@
 			<a href="flaticon.com">Flaticon</a>.
 		</footer>
 
-		<script src="aufg4.js"></script>
+		<script src="aufg5.js"></script>
 	</body>
 </html>
