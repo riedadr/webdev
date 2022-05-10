@@ -24,6 +24,7 @@
 			<?php
 
 			$images = scandir("./_übung/2/aufg5/images");
+			//! Pfad anpassen und testen mit print_r($images);
 
 			foreach ($images as $image) {
 				if ($image[0] == ".") continue;
