@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="icon" href="/favicon.ico" />
 	<link rel="stylesheet" href="../übung2.css" />
-	<title>Ü2/4</title>
+	<title>Ü2/5</title>
 </head>
 
 <body id="aufg4">
@@ -32,9 +32,10 @@
 				$name = explode(".", $image);
 				$name = ucfirst($name[0]);
 
-				echo '<figure id="' . $name . '">
-				<img src="images/' . $image . '" alt="' . $name . '" />
-				<figcaption>' . $name . '</figcaption>
+				echo '
+				<figure id="' . $name . '">
+					<img src="images/' . $image . '" alt="' . $name . '" />
+					<figcaption>' . $name . '</figcaption>
 				</figure>';
 			}
 
