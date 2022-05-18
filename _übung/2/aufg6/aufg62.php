@@ -15,7 +15,7 @@
 <body>
 
     <header>
-        <h1>Web-Dev 1: Ü2/6</h1>
+        <h1>Web-Dev 1: Ü2/62</h1>
         <a id="home" href="/" title="Startseite">
             <img src="/icons/house-solid.svg" alt="Home">
         </a>
@@ -43,16 +43,19 @@
             }
 
             $id = 0;
-            if (array_key_exists("id", $_GET)) {
-                $id = $_GET["id"];
+            $eingabeform = &$_POST; #&$ ist eine Referenz
+            $auswahlform = &$_GET;
+
+            if (array_key_exists("id", $auswahlform)) {
+                $id = $auswahlform["id"];
             }
-            else if (!empty($_GET)) {
-                $contact_id = $_GET["contact_id"];
-                unset($_GET["contact_id"]);
+            if (array_key_exists("contact_id", $eingabeform)) {
+                $contact_id = $eingabeform["contact_id"];
+                unset($eingabeform["contact_id"]);
 
                 if(array_key_exists($contact_id, $contact)) {
                     #Person steht auf der Liste
-                    $contact[$contact_id] = $_GET;
+                    $contact[$contact_id] = $eingabeform;
 
                     ftruncate($fp, 0);
                     foreach ($contact as $person) {
@@ -60,8 +63,8 @@
                     }
                     $id = $contact_id;
                 } else {
-                    fputs($fp, serialize($_GET) . "\n");
-                    $contact[] = $_GET;
+                    fputs($fp, serialize($eingabeform) . "\n");
+                    $contact[] = $eingabeform;
                     $id = count($contact) - 1;
                 }
             }
@@ -88,7 +91,7 @@
 
             fclose($fp);
             ?>
-            <form id="daten">
+            <form id="daten" method="post">
                 <?php
                 $vorname = $nachname = $alter = $geschlecht = $straße = $plz = $ort = "";
                 $contact_id = $id;

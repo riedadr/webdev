@@ -25,7 +25,6 @@ function submit() {
 	const formular = new FormData(form);
 	const formData = Object.fromEntries(formular.entries());
 	console.log(formData);
-	showResults();
 }
 
 function showResults() {
