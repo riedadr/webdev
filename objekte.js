@@ -49,7 +49,4 @@ person2.age = 22; //wird nicht mehr geändert
 console.log(person2);
 
 
-
-
-
 document.write("</div>");

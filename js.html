@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#18181b" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="prism/prism.css" />
+
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-content">
+				<h1 class="no-margin">
+					Web-Dev 1
+					<time class="datum">24. Mai 2022</time>
+				</h1>
+				<button id="scrollUp" onclick="scrollToSection('top')">
+					<img src="icons/angles-up-solid.svg" alt="scroll to top" />
+				</button>
+			</div>
+			<progress id="scoll-progress" value="0" max="100"></progress>
+		</header>
+		<main id="main">
+			<section id="top">
+				<h1>JS-Klassen</h1>
+				<pre class="block"><code class="language-js">
+                    h
+                    <embed style="width: 100%;" src="klassen.js">
+                         </code></pre>
+			</section>
+		</main>
+		<script src="klassen.js"></script>
+	</body>
+	<script src="index.js"></script>
+	<script src="prism/prism.js"></script>
+</html>
