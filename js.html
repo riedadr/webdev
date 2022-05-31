@@ -28,12 +28,66 @@
 			<section id="top">
 				<h1>JS-Klassen</h1>
 				<pre class="block"><code class="language-js">
-                    h
-                    <embed style="width: 100%;" src="klassen.js">
+hier sollte der Text aus klassen.js stehen
+                    <embed style="width: 100%;" src="klassen.js"></code></pre>
+				<script src="klassen.js"></script>
+
+				<h1>Lustige Funktionen</h1>
+				<pre
+					class="block"
+				><code class="language-js">//gibt Informationen zu window aus
+console.log(window);
+
+//öffnet eine Webseite
+location.href = "https://google.com";
+
+//zeigt Verlauf des aktuellen Tabs an
+console.log(history);
+history.back();
+history.forward();
+history.go(-1);	// = history.back()
+
+//Informationen zu Browser
+console.log(navigator);
+
+//Informationen zu Bildschirm
+console.log(screen);
+
+//Informationen zu HTML-Dokument
+console.log(document);
+document.open();	//öffnet neues Dok
+document.write("&lt;h1&gt;Ich bin neu hier&lt;/h1&gt;");
+document.close();	//schließt Dok
                          </code></pre>
 			</section>
+			<section>
+				<h1>
+					Document Objekt Model (DOM)
+					<time class="datum">31. Mai 2022</time>
+				</h1>
+
+				<pre class="block">
+          [body]
+         /     \
+[section]      [section] 
+                /   \
+              [h1]  [pre.block]
+				</pre
+				>
+
+				<pre class="block"><code class="language-js">
+const headline = document.createElement();
+const grreting = document.getTextNode("Hello JS DOM")
+console.log(greeting);
+headline.appendChild(greeting);
+document.body.apendChild(greeting);
+                         </code></pre>
+				<div class="block">
+					<script src="dom.js"></script>
+					document ist ganz wichtig!
+				</div>
+			</section>
 		</main>
-		<script src="klassen.js"></script>
 	</body>
 	<script src="index.js"></script>
 	<script src="prism/prism.js"></script>

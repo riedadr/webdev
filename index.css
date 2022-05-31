@@ -256,8 +256,41 @@ footer img {
   transition: var(--transition) ease;
 }
 
+#chapters li.link {
+  width: 100%;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 2px solid var(--fg);
+  border-radius: 0.25rem;
+  background-color: var(--fg);
+  color: #fff;
+  text-align: left;
+  -webkit-transition: var(--transition) ease;
+  transition: var(--transition) ease;
+}
+
+#chapters li.link a {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-style: normal;
+}
+
+#chapters li.link a h2 {
+  margin: 0;
+}
+
 #chapters li button:hover {
   border: 2px solid var(--green);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: var(--transition) ease;
+  transition: var(--transition) ease;
+}
+
+#chapters li.link:hover {
+  border: 2px solid var(--orange);
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   -webkit-transition: var(--transition) ease;
