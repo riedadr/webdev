@@ -1,4 +1,13 @@
 <?php
+
+function selectOptions($contact, $id)
+{
+    foreach ($contact as $key => $value) {
+        echo "<option value='$key'", ($key == $id ? 'selected="selected"' : ''), ">", $value->vorname, "</option>";
+    }
+    echo "<option value='-1'", (-1 == $id ? 'selected="selected"' : ''), ">Neuer Eintrag</option>\n";
+}
+
 $fp = fopen("person.txt", "a+");
 if (!$fp) {
     die(`<p class="error">Fehler: Kann Datei nicht schreiben</p>`);
@@ -45,10 +54,10 @@ if ($eingabeobj != null && property_exists($eingabeobj, "contact_id")) {
         $id = $contact_id;
     } else {
         fputs($fp, serialize($eingabeobj) . "\n");
+        $id = count($contact);
         $contact[] = $eingabeobj;
-        $id = count($contact) - 1;
     }
-
+    selectOptions($contact, $id);
     die("<h4>Speichern erfolgreich</h4>");
 }
 
@@ -67,39 +76,24 @@ fclose($fp);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="aufg8.css" />
-    <title>Ü2/6</title>
+    <title>Ü2/8</title>
 </head>
 
 <body>
 
     <header>
-        <h1>Web-Dev 1: Ü2/62</h1>
+        <h1>Web-Dev 1: Ü2/8</h1>
         <a id="home" href="/" title="Startseite">
             <img src="/icons/house-solid.svg" alt="Home">
         </a>
     </header>
     <main>
         <section>
-            <?php
-
-            #count: damit beim neuladen durch die auswahl einer person kein neuer eintrag angelegt wird
-            #if (!empty($_GET) && count($_GET) > 1) {
-            #    fputs($fp, serialize($_GET) . "\n");
-            #    $contact[] = $_GET;
-            #}
-
-            if (!empty($contact)) {
-                echo "<form>
-                <select name='id' onchange=''>\n";
-                foreach ($contact as $key => $value) {
-                    echo "<option value='$key'", ($key == $id ? 'selected="selected"' : ''), ">", $value->vorname, "</option>";
-                }
-                echo "<option value='-1'", (-1 == $id ? 'selected="selected"' : ''), ">Neuer Eintrag</option>\n";
-                echo "</select>
-                </form>\n";
-            }
-
-            ?>
+            <form>
+                <select name='id' onchange='submit()'>
+                    <?= selectOptions($contact, $id); ?>
+                </select>
+            </form>
             <form id="daten" method="post">
                 <?php
                 $vorname = $nachname = $alter = $geschlecht = $straße = $plz = $ort = "";
@@ -160,6 +154,15 @@ fclose($fp);
             const request = new XMLHttpRequest();
             request.open("POST", "<?= $_SERVER['PHP_SELF'] ?>");
             request.setRequestHeader("Content-Type", "application/json");
+            request.onload = function() {
+                console.log(this);
+                const select = document.querySelector("select[name=id");
+                select.innerHTML = this.response;
+
+                const option = document.querySelector("option[selected=selected]")
+                form["contact_id"].value = option.value;
+           
+            }
             request.send(string);
         }
     </script>

@@ -15,7 +15,7 @@
 <body>
 
     <header>
-        <h1>Web-Dev 1: Ü2/62</h1>
+        <h1>Web-Dev 1: Ü2/62 ($_POST)</h1>
         <a id="home" href="/" title="Startseite">
             <img src="/icons/house-solid.svg" alt="Home">
         </a>

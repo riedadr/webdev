@@ -1,1 +1,5 @@
 O:8:"stdClass":7:{s:7:"vorname";s:8:"Günther";s:8:"nachname";s:5:"Jauch";s:5:"alter";s:0:"";s:10:"geschlecht";s:0:"";s:7:"straße";s:0:"";s:3:"ort";s:0:"";s:3:"plz";s:0:"";}
+O:8:"stdClass":7:{s:7:"vorname";s:4:"Karl";s:8:"nachname";s:5:"Heinz";s:5:"alter";s:2:"69";s:10:"geschlecht";s:0:"";s:7:"straße";s:0:"";s:3:"ort";s:0:"";s:3:"plz";s:0:"";}
+O:8:"stdClass":7:{s:7:"vorname";s:4:"Otto";s:8:"nachname";s:6:"Walkes";s:5:"alter";s:0:"";s:10:"geschlecht";s:0:"";s:7:"straße";s:0:"";s:3:"ort";s:0:"";s:3:"plz";s:0:"";}
+O:8:"stdClass":7:{s:7:"vorname";s:4:"Hans";s:8:"nachname";s:9:"der Heide";s:5:"alter";s:0:"";s:10:"geschlecht";s:0:"";s:7:"straße";s:0:"";s:3:"ort";s:0:"";s:3:"plz";s:0:"";}
+O:8:"stdClass":7:{s:7:"vorname";s:5:"Franz";s:8:"nachname";s:8:"Stettner";s:5:"alter";s:0:"";s:10:"geschlecht";s:0:"";s:7:"straße";s:0:"";s:3:"ort";s:0:"";s:3:"plz";s:0:"";}
