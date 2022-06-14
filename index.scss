@@ -125,6 +125,20 @@ header {
         justify-content: space-between;
         align-items: center;
         background-color: var(--fg);
+
+        a {
+            height: 3rem;
+            width: 3rem;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            img {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
     }
 }
 

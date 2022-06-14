@@ -39,7 +39,7 @@ body {
   margin: 0;
   background-color: var(--bg);
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .list-unstyled {
@@ -131,6 +131,25 @@ header .nav-content {
       -ms-flex-align: center;
           align-items: center;
   background-color: var(--fg);
+}
+
+header .nav-content a {
+  height: 3rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-content a img {
+  width: 2rem;
+  height: 2rem;
 }
 
 header progress[value] {
