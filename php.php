@@ -28,7 +28,7 @@
     </header>
     <main id="main">
         <section id="top">
-            <h1>PHP</h1>
+            <h1>PHP <time class="datum">14. Juni 2022</time></h1>
             <h2>Datentypen</h2>
             <dl>
                 <df>Boolean</df>
@@ -119,12 +119,12 @@
                 echo "<h3><code>Array</code></h3>";
                 $feld = [1, 2, 3, 4, 5];
                 var_dump($feld);
-                
+
                 $feld[10] = "zehn";
                 var_dump($feld);
                 echo count($feld);
 
-                for($i = 0; $i < count($feld); $i++) {
+                for ($i = 0; $i < count($feld); $i++) {
                     echo "[$i]: $feld[$i]\n";
                     #"zehn" fehlt, feld[5] = nix
                 }
@@ -138,7 +138,7 @@
                 unset($feld);       #feld wird gelöscht und kann neu deklatiert werden
                 var_dump($feld);
 
-                $feld2 = Array(1 => "eins", 2 => "zwei");
+                $feld2 = array(1 => "eins", 2 => "zwei");
                 #ein Array ohne index 0
                 var_dump($feld2);
                 $feld2[] = "drei";
@@ -159,6 +159,152 @@
                 ?>
             </div>
         </section>
+        <section>
+            <h1>Testat 3 <time class="datum">21. Juni 2022</time></h1>
+            <p>14 algorithmische Aufgaben auf PROCON. Verbindung über Hochschulnetz (VPN).</p>
+            <p>Volle Punktzahl gibt es nur beim ersten Versuch.</p>
+            <p>OBACHT: Bei Aufgabe 1 gibt es anscheinend Probleme mit dem Trennzeichen für explode, z.B. beim Leerzeichen.</p>
+            <p>Bestenfalls gleiche PHP-Version (7.0.7) wie der Server verwenden.</p>
+            <p>Sollte bis nach der WebDev-Prüfung erledigt sein.</p>
+        </section>
+        <section>
+            <h1>PHP (Teil 2) <time class="datum">21. Juni 2022</time></h1>
+            <p>In Shell mit <code>$php -a</code></p>
+            <pre class="block"><code class="language-php">$a = ["Apfel", "Birne"];
+print_r($a);            #Array
+print_r((object) $a);   #stdClass
+$obj = (object) null;
+$obj->name = "Fred";
+print_r($obj);
+unset($obj);
+print_r($obj);          #undefined variable $obj
+
+$obj = new stdclass();
+print_r($obj);</code></pre>
+            <h2>Variablen</h2>
+            <p>vordefiniert:</p>
+            <ul>
+                <li>GLOBALS,</li>
+                <li>_SERVER, _GET, _POST, _FILES, _REQUEST (Kombination aus $_POST und $_GET),</li>
+                <li>_SESSION, _ENV, _COOKIE (ermöglicht das Verfolgen einer Sitzung über mehrere Webseiten)</li>
+                <li>php_errormsg, http_response_header, argc, argv</li>
+            </ul>
+
+            <p>GLOBALS</p>
+            <pre class="block"><code class="language-php">
+                <?php print_r($GLOBALS) ?>
+            </code></pre>
+
+            <p>_SERVER</p>
+            <pre class="block"><code class="language-php">
+                <?php print_r($_SERVER) ?>
+            </code></pre>
+
+            <p>$argv für Übergabeparameter</p>
+            <pre class="block"><code class="language-php">file.php:
+    &lt;?php
+        print_r($argv);
+    ?&gt;
+                
+> php file.php Apfel Birne Traube
+    Array
+    (
+        [0] => Apfel
+        [1] => Birne
+        [2] => Traube
+    )
+                </code></pre>
+
+            <p>stdin zum Einlesen fon Text als Alternative zu $argv (?)</p>
+            <pre class="block"><code class="language-php">&lt;?php
+    print_r($argv);
+
+    
+    $stdin = fopen("php://stdin", "r");
+    $a; $b; $c;
+
+    fcanf($stdin, "%s %s %s\n", $a, $b, $c);
+    echo "$a $b $c";
+    fclose($stdin);
+?&gt;
+
+> php file.php Apfel Birne Traube
+    Apfel Birne Traube
+                </code></pre>
+
+            <p>define() für Konstanten</p>
+            <pre class="block"><code class="language-php">&lt;?php
+    define("SYMBOL", 69);
+    echo "SYMBOL = " . SYMBOL;
+    <?php
+    define("SYMBOL", 69);
+    echo "  #SYMBOL = " . SYMBOL . "\n";
+    ?>
+    SYMBOL = 404;          #err: expr is not writable
+?&gt;</code></pre>
+
+
+            <p>Referenzen</p>
+            <pre class="block"><code class="language-php">&lt;?php
+    $a = 100;
+    $b = $a;
+    $a++;
+
+    echo "$a, $b";
+    <?php
+    $a = 100;
+    $b = $a;
+    $a++;
+    echo "  #$a, $b \n";
+    ?>
+
+    $a = 100;
+    $b = &$a;       #b ist eine Referenz (&) auf a
+    $a++;
+
+    echo "$a, $b";
+    <?php
+    $a = 200;
+    $b = &$a;
+    $a++;
+    echo "  #$a, $b \n";
+    ?>
+?&gt;</code></pre>
+
+            <p>Funktionen mit Referenzen (bringt Geschwindigkeit bei Datenverarbeitung)</p>
+            <pre class="block"><code class="language-php">&lt;?php
+    function addOne(Int &$a): Int {
+        # Durch die Referenz ändert sich der Wert beim Aufrufer
+        $a++;
+
+        /* 
+         * Der Entwickler kann php (optional) dazu veranlassen, 
+         * Datentypen bei Über- und Rückgabe zu überprüfen.
+         * Ergebnis: Im Zweifelsfall wird das Skript beendet.
+        */
+
+        return $a;      #steht hier nur zum Testen von ": Int"
+    }
+
+    $a = intval("300km");       #$a = 300 geht auch
+    addOne($a);
+    echo "a = $a";
+    <?php
+    function addOne(Int &$a): Int
+    {
+        $a++;
+        return $a;
+    }
+
+    $a = intval("300km");
+    addOne($a);
+    echo "  #a = $a\n";
+    ?>
+?&gt;</code></pre>
+
+
+        </section>
+
     </main>
 </body>
 <script src="index.js"></script>
