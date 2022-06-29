@@ -56,7 +56,7 @@
                         <li value="$row->BfNr">
                             <a target="_blank" href="https://google.de/maps/place/$row->Strasse, $row->PLZ $row->Ort">$row->Station</a>
                             
-                            <a target="_blank" href="https://öpnvkarte.de/#$row->Laenge; $row->Breite; 16">ÖPNV</a>
+                            <a target="_blank" href="https://öpnvkarte.de/#$row->Laenge;$row->Breite;16">ÖPNV</a>
                         </li>
                     ITEM;
                 }
