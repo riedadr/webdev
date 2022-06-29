@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <?php include 'header.html'; ?>
-</head>
+
+<?php include 'header.html'; ?>
+
 
 <body>
     <header>
@@ -17,7 +17,7 @@
     <main>
 
         <h1>Deutsche Bahn</h1>
-        <h2>Reginalbereiche</h2>
+        <h2>Regionalbereiche</h2>
         <ol>
 
             <?php

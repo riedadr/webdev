@@ -72,6 +72,7 @@ body header a img {
 }
 
 ol {
+  margin-top: 2rem;
   padding-left: 3rem;
 }
 
@@ -90,6 +91,10 @@ ol li:hover {
   background-color: var(--fg);
 }
 
+ol li:hover a {
+  color: var(--green);
+}
+
 dl {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -105,5 +110,44 @@ dl df {
 
 dl dd {
   padding-left: 1rem;
+}
+
+#kat-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+#kat-container form {
+  width: 100%;
+}
+
+#kat-container form button {
+  padding: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  border-radius: .25rem;
+  color: var(--blue);
+  cursor: pointer;
+  -webkit-transition: 200ms ease;
+  transition: 200ms ease;
+}
+
+#kat-container form button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border: 2px solid var(--purple);
+  color: var(--purple);
+}
+
+#kat-container form button.pressed {
+  border: 2px solid var(--pink);
+  color: var(--pink);
 }
 /*# sourceMappingURL=übung3.css.map */

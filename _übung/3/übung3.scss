@@ -66,11 +66,13 @@ body {
 }
 
 ol {
+    margin-top: 2rem;
     padding-left: 3rem;
 
     li {
         padding: 0.25rem;
         border-radius: 0.25rem;
+
         a {
             text-decoration: none;
             color: white;
@@ -79,6 +81,10 @@ ol {
         &:hover {
             color: var(--green);
             background-color: var(--fg);
+
+            a {
+                color: var(--green);
+            }
         }
     }
 }
@@ -100,5 +106,41 @@ dl {
 
     dd {
         padding-left: 1rem;
+    }
+}
+
+#kat-container {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+
+    form {
+        width: 100%;
+
+        button {
+            padding: 0.5rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            width: 100%;
+    
+            background-color: transparent;
+            border: 2px solid var(--blue);
+            border-radius:  .25rem;
+            color: var(--blue);
+            cursor: pointer;
+            transition: 200ms ease;
+
+            &:hover {
+                transform: scale(1.1);
+                border: 2px solid var(--purple);
+                color: var(--purple);
+            }
+    
+            &.pressed {
+                border: 2px solid var(--pink);
+                color: var(--pink);
+            }
+        }
     }
 }
