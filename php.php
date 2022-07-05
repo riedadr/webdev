@@ -467,14 +467,17 @@ print_r($obj);</code></pre>
 
 	/* Ausgabe:
     <?php
-	class K {
+	class K
+	{
 		public int $value;	#public <type> $name
 
-		function __construct() {
+		function __construct()
+		{
 			$this->value = 100;		#OBACHT: $this ist immer nötig
 		}
 
-		function __destruct() {		#gibt den Speicher mit unset() frei
+		function __destruct()
+		{		#gibt den Speicher mit unset() frei
 			echo "RIP";
 		}
 	}
@@ -488,6 +491,293 @@ print_r($obj);</code></pre>
 
 ?&gt;</code></pre>
 		</section>
+
+
+		<section>
+			<h1>PHP (Teil 4) <time class="datum">5. Juli 2022</time></h1>
+			<h2>Klassenobjekte</h2>
+			<p>Wandel über Zeit: Von stiefmütterlichen "Vorhandensein" zu einem funktionierenden Konzept. Starke Ähnlichkeiten mit Java.</p>
+
+			<p><code class="language-php">__construct()</code> zum Erstellen, <code class="language-php">__destruct()</code> zum Zerstören (ähnlich Garbage-Collector)</p>
+
+			<pre class="block"><code class="language-php">&lt;?php
+	class Basis
+	{
+		private $name;	#public | private | var
+		static $count_objects = 0;		#zählt, wie viele Objekte der Klasse erzeugt wurden
+
+		function __construct($name = "Objektname")	#default-name: "Objektname"
+		{
+			$name_with_counter = $name . ++Basis::$count_objects;	#Zugriff auf statische Variable
+			$this->name = $name_with_counter;	#$this ist hier notwendig
+		}
+
+		function __destruct()
+		{
+			Basis::$count_objects--;	#Objekt-Zähler wird heruntergesetzt
+			echo "Objekt gelöscht: " . Basis::$count_objects;
+		}
+	}
+
+	
+
+	for ($i = 0; $i < 5; $i++) {
+		$obj = new Basis("Josef");
+		print_r($obj);
+	}
+
+
+/* Ausgabe:
+	<?php
+	class Basis
+	{
+		protected $name;	#public | private | var
+		static $count_objects = 0;		#zählt, wie viele Objekte der Klasse erzeugt wurden
+		const PI = 3.1415;				#ähnlich define()
+
+		function __construct($name = "Objektname")	#default-name: "Objektname"
+		{
+			$name_with_counter = $name . ++Basis::$count_objects;	#Zugriff auf statische Variable
+			$this->name = $name_with_counter;	#$this ist hier notwendig
+		}
+
+		function __destruct()
+		{
+			Basis::$count_objects--;	#Objekt-Zähler wird heruntergesetzt
+			print("-- Objekt gelöscht: $this->name; counter: " . Basis::$count_objects . "\n");
+		}
+
+		function whoAmI()
+		{
+			return "Basis";
+		}
+	}
+
+
+
+	for ($i = 0; $i < 5; $i++) {
+		$obj = new Basis("Josef");
+		print_r($obj);
+	}
+
+	unset($obj);
+	?>
+*/
+?&gt;</code></pre>
+
+			<p>Interface</p>
+			<pre class="block"><code class="language-php">&lt;?php
+	interface C {
+		function print();
+	}
+
+	$doC = function (C $c) {
+		$c->print();
+	};
+	<?php
+	interface C
+	{
+		function print();
+	}
+
+	$doC = function (C $c) {
+		$c->print();
+	};
+	?>
+
+?&gt;</code></pre>
+
+
+			<p>Vererbung</p>
+			<pre class="block"><code class="language-php">&lt;?php
+	class B extends Basis implements C
+	{
+		static $count_objects = 0;
+
+		function __construct()
+		{
+			parent::__construct();
+			self::$count_objects++;
+		}
+
+		function print()
+		{
+			echo "\nprint(): " . $this->whoAmI() . "\n";
+			var_dump($this);
+		}
+
+		function whoAmI()
+		{
+			return "B";
+		}
+	}
+
+	<?php
+	class B extends Basis implements C
+	{
+		static $count_objects = 0;
+
+		function __construct()
+		{
+			parent::__construct();
+			self::$count_objects++;
+		}
+
+		function print()
+		{
+			echo "\nprint(): " . $this->whoAmI() . "\n";
+			var_dump($this);
+		}
+
+		function whoAmI()
+		{
+			return "B";
+		}
+	}
+
+	$doC(new B);
+	?>
+?&gt;</code></pre>
+
+			<p>Traits</p>
+			<pre class="block"><code class="language-php">&lt;?php
+	trait CopyPaste
+	{
+		private $es = "Es";
+
+		function sagEs()
+		{
+			echo "$this->es\n";
+		}
+	}
+
+	<?php
+	trait CopyPaste
+	{
+		private $es = "Es";
+
+		function sagEs()
+		{
+			echo "$this->es\n";
+		}
+	}
+	?>
+
+?&gt;</code></pre>
+
+			<p>Abstrakte Klassen</p>
+			<pre class="block"><code class="language-php">&lt;?php
+	abstract class AB
+	{
+		use CopyPaste;
+
+		protected $number = -1;
+
+		abstract function give_number(): Int;
+
+		final function setNumber($number)
+		{
+			$this->number = $number;
+		}
+	}
+
+	class RealAB extends AB
+	{
+		function give_number(): Int
+		{
+			return 100 * parent::$number;
+		}
+	}
+
+	$realAB = new RealAB();
+	echo "Number von RealAB: $realAB->give_number()";
+	echo "$realAB->sagEs"
+
+	<?php
+	abstract class AB
+	{
+		use CopyPaste;
+
+		protected $number = -1;
+
+		abstract function give_number(): Int;
+
+		final function setNumber($number)
+		{
+			$this->number = $number;
+		}
+	}
+
+	class RealAB extends AB
+	{
+		function give_number(): Int
+		{
+			return 100 * parent::$number;
+		}
+	}
+
+	$realAB = new RealAB();
+	echo "Number von RealAB: $realAB->give_number()";
+	echo "$realAB->sagEs"
+	?>
+
+?&gt;</code></pre>
+
+			<p>Exceptions</p>
+			<pre class="block"><code class="language-php">&lt;?php
+	function werfen()
+	{
+		throw new Exception("Ausnahme geworfen");
+	}
+
+	try {
+		werfen();
+	} catch (Exception $e) {
+		print_r($e);
+	} catch (Error $err) {
+		echo "Hoppala!";
+	}
+
+	#Ausgabe: 
+	<?php
+	function werfen()
+	{
+		throw new Exception("Ausnahme geworfen");
+	}
+
+	try {
+		werfen();
+	} catch (Exception $e) {
+		print_r($e);
+	} catch (Error $err) {
+		echo "Hoppala!";
+	}
+
+	?>
+?&gt;</code></pre>
+
+<p><code class="language-php">_exists()</code></p>
+			<pre class="block"><code class="language-php">&lt;?php
+	if (interface_exists('C')) {
+		echo "Interface existiert";
+	}
+
+	<?php
+	if (interface_exists('C')) {
+		echo "#Interface existiert";
+	}
+	?>
+
+?&gt;</code></pre>
+
+
+
+
+
+		</section>
+
+
+
 
 
 	</main>
