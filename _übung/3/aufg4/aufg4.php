@@ -20,8 +20,11 @@
     </header>
     <main>
         <h1>Deutsche Bahn</h1>
-        <h2>Kategorien</h2>
 
+
+        <input id="suche" oninput="search(value)" />
+
+        <h2>Kategorien</h2>
         <div id="kat-container">
 
             <?php
@@ -44,11 +47,14 @@
             ?>
         </div>
         <section>
+
             <ol>
 
                 <?php
                 $query = "SELECT BfNr, Station, Strasse, PLZ, Ort, Laenge, Breite FROM `Bahnhof` WHERE KatVst = $kat ORDER BY Station";
                 $result = mysqli_query($db, $query);
+
+                echo "<p>Treffer: $result->num_rows</p>\n<ol>";
 
                 while ($row = mysqli_fetch_object($result)) {
                     #print_r($row);
@@ -60,10 +66,55 @@
                         </li>
                     ITEM;
                 }
-            ?>
+
+                echo "</ol>";
+                ?>
             </ol>
         </section>
+        <div id="overlay">
+            lädt ...
+            <progress />
+        </div>
     </main>
+    <script>
+        const liste = document.querySelectorAll("li");
+        const overlay = document.getElementById("overlay");
+        const progress = document.querySelector("progress");
+        const suche = document.getElementById("suche");
+
+
+        function search(value) {
+            const regex = new RegExp(`^${value.toLowerCase()}.*$`);
+
+            new Promise(function(resolve, reject) {
+                overlay.style.display = "flex";
+                progress.max = liste.length;
+                suche.setAttribute("disabled", true);
+
+                const ol = document.querySelector("ol");
+                liste.forEach((item, index) => {
+                    window.setTimeout(() => {
+                        item.style.display = null;
+                        if (!item.innerText.toLowerCase().match(regex)) {
+                            item.style.display = "none";
+                        }
+                        
+                        progress.value = index + 1;
+                        if (index == liste.length - 1) resolve("OK");
+                    }, 100)
+                });
+
+
+            }).then((res) => {
+                console.log(res);
+                overlay.style.display = "none";
+                suche.disabled = false;
+            });
+
+
+
+        }
+    </script>
 </body>
 
 </html>
