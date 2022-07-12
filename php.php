@@ -17,7 +17,7 @@
 	<header>
 		<div class="nav-content">
 			<h1 class="no-margin">
-				Web-Dev 1
+				<a href="/"> Web-Dev 1 </a>
 				<time class="datum">14. Juni 2022</time>
 			</h1>
 			<a href="/" title="Startseite">
@@ -650,7 +650,6 @@ print_r($obj);</code></pre>
 			echo "$this->es\n";
 		}
 	}
-
 	<?php
 	trait CopyPaste
 	{
@@ -662,10 +661,9 @@ print_r($obj);</code></pre>
 		}
 	}
 	?>
-
 ?&gt;</code></pre>
 
-			<p>Abstrakte Klassen</p>
+			<p>Abstrakte Klassen <small class="orange">OBACHT: <code class="language-php">give_number()</code> funktioniert hier iwie nicht</small></p>
 			<pre class="block"><code class="language-php">&lt;?php
 	abstract class AB
 	{
@@ -756,7 +754,7 @@ print_r($obj);</code></pre>
 	?>
 ?&gt;</code></pre>
 
-<p><code class="language-php">_exists()</code></p>
+			<p><code class="language-php">_exists()</code></p>
 			<pre class="block"><code class="language-php">&lt;?php
 	if (interface_exists('C')) {
 		echo "Interface existiert";
@@ -770,16 +768,7 @@ print_r($obj);</code></pre>
 
 ?&gt;</code></pre>
 
-
-
-
-
 		</section>
-
-
-
-
-
 	</main>
 </body>
 <script src="index.js"></script>

@@ -5,18 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#18181b" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="walking-duck.gif" type="image/gif" />
 		<link rel="stylesheet" href="index.css" />
 		<link rel="stylesheet" href="prism/prism.css" />
 
-		<title>Vorlesungen</title>
+		<title>Web-Dev 1</title>
 	</head>
 	<body>
 		<header>
 			<div class="nav-content">
 				<h1 class="no-margin">
-					Web-Dev 1
-					<time class="datum">14. Juni 2022</time>
+					<a href="/"> Web-Dev 1 </a>
+					<time class="datum">5. Juli 2022</time>
 				</h1>
 				<button id="scrollUp" onclick="scrollToSection('kapitel')">
 					<img src="icons/angles-up-solid.svg" alt="scroll to top" />
@@ -139,7 +139,23 @@
 						<li>
 							<a href="_übung/2/aufg6/aufg6.php">
 								<h2>Aufgabe 6</h2>
-								<p>Formular mit PHP</p>
+								<p>
+									Formular mit PHP
+									<small class="orange"
+										>lokal ausführen</small
+									>
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="_übung/2/aufg6/aufg62.php">
+								<h2>Aufgabe 6 (POST)</h2>
+								<p>
+									Formular mit PHP + POST
+									<small class="orange"
+										>lokal ausführen</small
+									>
+								</p>
 							</a>
 						</li>
 					</ul>
@@ -552,16 +568,20 @@ function mul(a, b) {
 				<script src="./js.js"></script>
 				<h2>Objekte</h2>
 				<script src="./objekte.js"></script>
-				<h2>Objekte2 <time class="datum">24. Mai 2022</time></h2>
-				<a href="/js.html">Klassen</a>
+				<h2>
+					Objekte2 / Klassen <time class="datum">24. Mai 2022</time>
+				</h2>
+				<p>Hier gehts zu den <a href="/js.html">Klassen</a></p>
+
+				<h1>PHP <time class="datum">14. Juni 2022</time></h1>
+				<p>Hier gehts zur <a href="/php.php">PHP-Seite</a></p>
 			</section>
 
 			<section>
-				<h1>Zusammenfassung <time class="datum">5. Juli 2022</time></h1>
-			</section>
-
-			<section>
-				<h1>Klausur <time class="datum">5. Juli 2022</time></h1>
+				<h1>
+					Klausur <time class="datum">5. Juli 2022</time>
+					<small class="orange">Angaben ohne Gewähr</small>
+				</h1>
 				<p>Am 16. Juli: A Gebäude mit Computer</p>
 				<p>
 					PC (ohne Internet; Dokumentation von PHP, HTML (MDN), CSS
@@ -573,7 +593,7 @@ function mul(a, b) {
 					keine Fehler beim Abschreiben entstehen.
 				</p>
 				<p class="red">
-					Halbe Stunde vorher dasein, um PCs einzurichten!!!
+					Halbe Stunde vorher da sein, um PCs einzurichten!!!
 				</p>
 				<p>Gruppeneinteilung: A008/0010: Gr 1; A012: Gr2; A014: Gr3</p>
 			</section>

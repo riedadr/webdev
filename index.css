@@ -39,7 +39,7 @@ body {
   margin: 0;
   background-color: var(--bg);
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .list-unstyled {
@@ -150,6 +150,14 @@ header .nav-content a {
 header .nav-content a img {
   width: 2rem;
   height: 2rem;
+}
+
+header .nav-content h1 a {
+  width: auto;
+  height: auto;
+  display: inline;
+  text-decoration: none;
+  color: #fff;
 }
 
 header progress[value] {
@@ -298,6 +306,10 @@ footer img {
 
 #chapters li.link a h2 {
   margin: 0;
+}
+
+#chapters li.link time {
+  display: block;
 }
 
 #chapters li button:hover {

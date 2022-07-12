@@ -1,3 +1,5 @@
+!OBACHT: unvollständig
+
 update Bahnhof set BLand = (SELECT id from Bundesland WHERE Bahnhof.Bundesland = Bundesland.Bundesland);
 alter table Bahnhof add FOREIGN KEY (BLand) REFERENCES Bundesland(id);
 ALTER TABLE Bahnhof DROP COLUMN Bundesland;

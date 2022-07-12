@@ -21,8 +21,7 @@
     <main>
         <h1>Deutsche Bahn</h1>
 
-
-        <input id="suche" oninput="search(value)" />
+        <input id="suche" placeholder="in Kategorie suchen" oninput="search(value)" />
 
         <h2>Kategorien</h2>
         <div id="kat-container">
@@ -109,6 +108,7 @@
                 console.log(res);
                 overlay.style.display = "none";
                 suche.disabled = false;
+                suche.focus();
             });
 
 

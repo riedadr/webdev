@@ -1,3 +1,5 @@
+!OBACHT: unvollständig
+
 ALTER TABLE Bahnhof ADD COLUMN Breite VARCHAR(11) AFTER Ort; 
 ALTER TABLE Bahnhof ADD COLUMN Laenge VARCHAR(11) AFTER Breite;
 

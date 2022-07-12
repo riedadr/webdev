@@ -23,8 +23,9 @@
 		<div id="images" title="Bilder">
 			<?php
 
-			$images = scandir("./_übung/2/aufg5/images");
+			$images = scandir("./images");
 			//! Pfad anpassen und testen mit print_r($images);
+			//xampp: $images = scandir("./_übung/2/aufg5/images");
 
 			foreach ($images as $image) {
 				if ($image[0] == ".") continue;

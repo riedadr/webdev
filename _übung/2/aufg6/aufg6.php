@@ -23,7 +23,9 @@
     <main>
         <section>
             <?php
-            $fp = fopen("person.txt", "a+");
+            $fp = fopen("/person.txt", "a+");
+            //! oder: $fp = fopen("person.txt", "a+");
+            
             if (!$fp) {
                 die(`<p class="error">Fehler: Kann Datei nicht schreiben</p>`);
             }

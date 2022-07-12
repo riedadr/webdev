@@ -139,6 +139,14 @@ header {
                 height: 2rem;
             }
         }
+        
+        h1 a {
+            width: auto;
+            height: auto;
+            display: inline;
+            text-decoration: none;
+            color: #fff;
+        }
     }
 }
 
@@ -297,6 +305,10 @@ footer {
             h2 {
                 margin: 0;
             }
+        }
+
+        time {
+            display: block;
         }
     }
 
