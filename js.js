@@ -53,7 +53,7 @@ do {
 } while (i < s.length);
 
 var feld2 = new Array("A", "B", "C", "D");
-document.write(feld2.join("-"));
+document.write(feld2.join("-"));	//A-B-C-D
 
 var feld3 = Array();
 

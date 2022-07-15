@@ -61,13 +61,14 @@
 			<br>
 			<div class="block">
 				<?php
-				function hello($nr)
+				function hello($nr = 0)
 				{
 					echo "Hello " . $nr . ". World! \n";
 				}
-				hello(1);
+				hello();	#Hello 0. World!
+				hello(1);	#Hello 1. World!
 
-				$hello2 = hello(2);
+				$hello2 = hello(2);	#Hello 2. World!
 
 				echo "<h3><code>var_dump()</code></h3>";
 				var_dump("0");
@@ -215,7 +216,7 @@ print_r($obj);</code></pre>
     )
                 </code></pre>
 
-			<p>stdin zum Einlesen fon Text als Alternative zu $argv (?)</p>
+			<p>stdin zum Einlesen von Text als Alternative zu $argv (?)</p>
 			<pre class="block"><code class="language-php">&lt;?php
     print_r($argv);
 
@@ -223,7 +224,7 @@ print_r($obj);</code></pre>
     $stdin = fopen("php://stdin", "r");
     $a; $b; $c;
 
-    fcanf($stdin, "%s %s %s\n", $a, $b, $c);
+    fscanf($stdin, "%s %s %s\n", $a, $b, $c);
     echo "$a $b $c";
     fclose($stdin);
 ?&gt;

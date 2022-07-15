@@ -32,9 +32,9 @@ class Eins {
 
 let m = new Eins();
 m.pet = "Goldfisch";
-console.log(m); //My {name: 'Otto'}
+console.log(m); //Eins {pet: "Goldfisch", #name: 'Otto',}
 m.age = { alter: 33, gewicht: 80 };
-console.log("age =", m.age);
+console.log("age =", m.age); //age = { alter: 33, gewicht: 80}
 
 class Under extends Eins {
 	get name() {
@@ -47,10 +47,11 @@ class Under extends Eins {
 }
 
 console.log(new Under("Walther").toString());
+//Karl von Otto
 
 console.groupEnd();
 
-//neu
+//2
 console.group(" +++ Zwei +++ ");
 
 class My2 {
@@ -80,7 +81,7 @@ console.log(a.value);
 
 console.groupEnd();
 
-//neu
+//3
 console.group(" +++ Drei +++ ");
 
 class Drei {}
@@ -96,7 +97,7 @@ console.log(k3);
 
 console.groupEnd();
 
-//neu
+//4
 console.group(" +++ Vier +++ ");
 
 function Vier() {
@@ -113,7 +114,7 @@ console.log(k4.age());
 
 console.groupEnd();
 
-//neu
+//5
 console.group(" +++ Fünf +++ ");
 
 class Fünf {
@@ -149,18 +150,18 @@ Object.keys(k51)
 
 console.groupEnd();
 
-//neu
+//6
 console.group(" +++ Sechs +++ ");
 
 const text = "The quick brown fox jumps over the lazy dog.";
 let regex = /quick/;
 console.log(text, regex);
 
-let result = regex.exec(text)
+let result = regex.exec(text);
 
-console.log("exec", result); 				//["quick"]
-console.log("match", text.match(regex));	//["quick"]
+console.log("exec", result); //["quick"]
+console.log("match", text.match(regex)); //["quick"]
 
-console.log("search", text.search(regex)); 	//4
+console.log("search", text.search(regex)); //4
 
 console.groupEnd();

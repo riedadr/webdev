@@ -27,7 +27,7 @@ ALTER TABLE Traeger ADD COLUMN id int(2) AUTO_INCREMENT PRIMARY Key;
 ALTER TABLE Bahnhof ADD COLUMN Traeger int(2);
 UPDATE Bahnhof SET Traeger = (SELECT id from Traeger where TR = Traeger.Traeger);
 alter table Bahnhof drop COLUMN TR;
-alter table Bahnhof add FOREIGN KEY (Traeger) REFERENCES Traeger(id);
+ALTER TABLE Bahnhof ADD FOREIGN KEY (Traeger) REFERENCES Traeger(id);
 
 
 

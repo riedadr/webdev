@@ -10,7 +10,7 @@ var obj = {a: 10, b: "Hallo Welt!" , f: function () {
     console.log("you called me!");
 }};
 
-console.log(obj.b);
+console.log(obj.b); //Hallo Welt!
 
 delete obj.b;
 console.log(obj);

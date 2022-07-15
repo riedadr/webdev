@@ -24,6 +24,7 @@
         <section>
             <?php
             $fp = fopen("/person.txt", "a+");
+        
             //! oder: $fp = fopen("person.txt", "a+");
             
             if (!$fp) {
